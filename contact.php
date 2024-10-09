@@ -5,17 +5,17 @@ include 'header.php';
 if ($_SERVER['REQUEST_METHOD']== 'POST'){
     
 
-    $email=htmlspecialchars(isset($_POST['email'])); //Récupère l'adresse E'mail
+    $email=htmlspecialchars ($_POST['email']); //Récupère l'adresse E'mail
     // Vérifier si l'email correspond à un format d'email valide
-    if (preg_match('/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/', $email)) {
-        echo "L'email est valide";
+    if (preg_match('/^[a-zA-Z0-9._%+-]+@[a-zA-Z-]+\.[a-zA-Z]{2,}$/', $email)) {
+        echo "L'email est valide<br>";
     } else {
         echo "Email invalide.<br>";
     }
     
     $telephone =htmlspecialchars ($_POST['tel']); // Récupérer le numéro de téléphone du formulaire
     // Vérifier si le numéro de téléphone est valide
-    if (preg_match('/^0[1-9](\.\d{2}){4}$/', $telephone)) {
+    if (preg_match('/^0[1-9](\.\d{2}){4}+$/', $telephone)) {
         echo "Numéro de téléphone valide.<br>";
     } else {
         echo "Numéro de téléphone invalide.<br>";
@@ -23,15 +23,15 @@ if ($_SERVER['REQUEST_METHOD']== 'POST'){
     
     $name= htmlspecialchars($_POST['nom']);
     //Vérifie si le nom et prénom sont valides
-    if (preg_match('/^[a-zA-Z\s]+$/', $name)){
+    if (preg_match('/^[a-zA-Z\s-]+$/', $name)){
         echo "Nom et prénom valide.<br>";
     }
     else{
         echo "Nom et prénom invalide.<br>";
     }}
-     //Envoi sur la page html associé
+     //Envoi sur la pageassocié
 if ( isset( $_POST['submit'])) { 
-    header('Location:' . $_SERVER("PHP_SELF")) ; //Renvoi vers la page HTML
+    header('Location:' . $_SERVER("PHP_SELF")) ; //Renvoi vers la page
 }
 ?>
 
@@ -67,7 +67,7 @@ if ( isset( $_POST['submit'])) {
         </div>
 
         <div class="pied-formulaire">
-            <input id="submit" type="submit" name="submit" value="Envoyer le message"></button>
+            <button id="submit" type="submit" name="submit">Envoyer le message</button>
             <button id="reset" type="reset" name="reset">Effacer</button>
         </div>
     </fieldset>
