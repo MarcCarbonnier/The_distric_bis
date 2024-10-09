@@ -1,0 +1,108 @@
+h3{
+    padding: 40%;
+    font-size: xx-large;
+}
+.pad{
+    display: inline-flex;
+}
+.corps{
+    background-color: black;
+    height: 100%;
+}
+.part1{
+    display: inline-flex;
+    justify-content: space-evenly;
+}
+a{
+    color: black;
+}
+.wrap{
+    width: 40vh;
+    height: 35vh;
+    background-image: url(/images_the_district/category/wrap_cat.jpg);
+    background-repeat: no-repeat;
+    background-size: 40vh;
+    background-position-y: -5vh;
+}
+.veggie{
+    position: relative;
+    left: 10vh;
+    width: 40vh;
+    height: 35vh;
+    background-image: url(/images_the_district/category/veggie_cat.jpg);
+    background-repeat: no-repeat;
+    background-size: 60vh;
+}
+.salade{
+    color: white;
+    position: relative;
+    left: 20vh;
+    width: 40vh;
+    height: 35vh;
+    background-image: url(/images_the_district/category/salade_cat.jpg);
+    background-repeat: no-repeat;
+    background-size: 40vh;
+    background-position-y: -15vh;
+}
+.sandwich{
+    color: white;
+    position: relative;
+    left: 30vh;
+    width: 40vh;
+    height: 35vh;
+    background-image: url(/images_the_district/category/sandwich_cat.jpg);
+    background-repeat: no-repeat;
+    background-size: 40vh;
+}
+.burger{
+    top: 5vh;
+    position: relative;
+    width: 40vh;
+    height: 35vh;
+    background-image: url(/images_the_district/category/burger_cat.jpg);
+    background-repeat: no-repeat;
+    background-size: 40vh;
+
+}
+.pate{
+    top: 5vh;
+    position: relative;
+    left: 10vh;
+    width: 40vh;
+    height: 35vh;
+    background-image: url(/images_the_district/category/pasta_cat.jpg);
+    background-repeat: no-repeat;
+    background-size: 60vh;
+    background-position-x: -10vh;
+    background-position-y: -30vh;
+}
+.sushi{
+    color: white;
+    top: 5vh;
+    position: relative;
+    left: 20vh;
+    width: 40vh;
+    height: 35vh;
+    background-image: url(/images_the_district/category/asian_food_cat.jpg);
+    background-repeat: no-repeat;
+    background-size: 40vh;
+    background-position-y: -15vh;
+}
+.pizza{
+    top: 5vh;
+    position: relative;
+    left: 30vh;
+    width: 40vh;
+    height: 35vh;
+    background-image: url(/images_the_district/category/pizza_cat.jpg);
+    background-repeat: no-repeat;
+    background-size: 40vh;
+    background-position-y: -5vh;
+}
+.part1, .part2{
+    padding-top: 5vh;
+    padding-left: 10px;
+}
+footer{
+    position: relative;
+}

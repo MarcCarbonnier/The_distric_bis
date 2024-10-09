@@ -1,0 +1,102 @@
+body{
+    background: linear-gradient(#325678, #824949);
+    height: 100vh;
+}
+
+.box{
+    position: relative;
+    background: linear-gradient(#951B1B,#21377E);
+    height: 50vh;
+    width: 50vh;
+    left: 75vh;
+    top: 5vh;
+}
+h1{
+    text-align: center;
+    color: white;
+}
+.couverts{
+    width: 30vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    left: 10vh;
+    top: 5vh;
+    font-size: 2.5vh;
+    background-color:white ;
+    border: none;
+}
+#guests{
+    border: none;
+}
+button{
+    border: none;
+    width: 30vh;
+}
+.date{
+    width: 30vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    left: 10vh;
+    top: 10vh;
+    font-size: x-large;
+    background-color: grey;
+}
+.horaire{
+    text-align: center;
+    position: relative;
+    top: 15vh;
+    font-size: x-large;
+
+}
+.reserve{
+    width: 30vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    left: 10vh;
+    bottom: -160px;
+    font-size: x-large;
+    background-color: white;
+}
+.reserveenvoi{
+    background-color: white;
+    border: none;
+}
+#date{
+    width: 30vh;
+    text-align: center;
+}
+#appt-time{
+    width: 20vh;
+}
+#nom{
+    width: 45vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    left: 3vh;
+    top: 2vh;
+    font-size: x-large;
+    border: none;
+}
+.boite{
+    text-align: center;
+    margin-top: 2vh;
+    color: white;
+}
+ul{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+footer{
+    position: absolute;
+    top: 90vh;
+    width: 100%;
+}
