@@ -8,44 +8,44 @@
 
 <div class="corps">
     <div class="part1">
-        <a href="/categorie/wrap.html">
+        <a href="/categorie/wrap.php">
             <div class="wrap pad">
                 <h3 class="titre-img">WRAP</h3>
             </div>
         </a>
-        <a href="/categorie/veggie.html">
+        <a href="/categorie/veggie.php">
             <div class="veggie pad">
                 <h3 class="titre-img">VEGGIE</h3>
             </div>
         </a>
-        <a href="/categorie/salade.html">
+        <a href="/categorie/salade.php">
             <div class="salade pad">
                 <h3 class="titre-img">SALADE</h3>
             </div>
         </a>
-        <a href="/categorie/sandwich.html">
+        <a href="/categorie/sandwich.php">
             <div class="sandwich pad">
                 <h3 class="titre-img">SANDWICH</h3>
             </div>
         </a>
     </div>
     <div class="part2">
-        <a href="/categorie/burger.html">
+        <a href="/categorie/burger.php">
             <div class="burger pad">
                 <h3 class="titre-img">BURGER</h3>
             </div>
         </a>
-        <a href="/categorie/pate.html">
+        <a href="/categorie/pate.php">
             <div class="pate pad">
                 <h3 class="titre-img">PATES</h3>
             </div>
         </a>
-        <a href="/categorie/sushi.html">
+        <a href="/categorie/sushi.php">
             <div class="sushi pad">
                 <h3 class="titre-img">SUSHI</h3>
             </div>
         </a>
-        <a href="/categorie/pizza.html">
+        <a href="/categorie/pizza.php">
             <div class="pizza pad">
                 <h3 class="titre-img">PIZZA</h3>
             </div>
