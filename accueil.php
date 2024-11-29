@@ -1,7 +1,9 @@
 <head>
     <?php
+    session_start();
     $title = 'Accueil';
-    include 'header.php';
+    require_once 'header.php';
+
     ?>
     <link rel="stylesheet" href="../CSS/accueil.css">
 </head>
@@ -19,11 +21,7 @@
     </canvas>
     <h2>Welcome</h2>
 </div>
+<script src="/JS/accueil.js"></script>
 <?php
 include 'footer.php';
 ?>
-<script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-<script src="/JS/accueil.js"></script>

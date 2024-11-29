@@ -1,93 +1,55 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const formulaire = document.getElementById("formulaire")
-    formulaire.getElementById("submit").addEventListener(this.onclick, function (e) {
-        e.preventDefault();
+    const formulaire = document.getElementById("formulaire"); // Référence au formulaire
+    const submitButton = document.getElementById("submitBtn"); // Bouton "Réserver"
 
-
+    submitButton.addEventListener("click", function (e) {
+        e.preventDefault(); // Empêche le comportement par défaut du bouton (soumission directe)
 
         let verif = true;
+
+        // Validation du champ "Nom"
         verif = verif && validerChamp(
-            /^[a-zA-ZÀ-ÿ-]+$/,
+            /^[a-zA-ZÀ-ÿ\s-]+$/,
             document.getElementById("nom"),
-            "Veuiller saisir des caractères valide"
+            "Veuillez saisir un nom valide"
         );
+
+        // Validation du champ "Nombre de couverts"
+        const guests = document.getElementById("guests").value;
+        if (guests < 1 || guests > 20) {
+            alert("Le nombre de couverts doit être compris entre 1 et 20.");
+            verif = false;
+        }
+        const timeInput = document.getElementById("appt-time");
+
+            const timeValue = timeInput.value; // Format HH:MM
+            const [hours, minutes] = timeValue.split(":").map(Number);
+    
+            // Vérifier si l'heure appartient à une plage valide
+            if (
+                (hours >= 11 && hours <= 13 && !(hours === 13 && minutes > 30)) || // Plage midi
+                (hours >= 18 && hours <= 21 && !(hours === 21 && minutes > 30))   // Plage dîner
+            ) {} else {
+                e.preventDefault();
+                alert("Veuillez sélectionner un horaire valide (Midi : 11:00-13:30, Dîner : 18:00-21:30).");
+                verif=false;
+            }
+
+        // Validation réussie -> Soumettre le formulaire
+        if (verif) {
+            alert("Merci pour votre réservation  !");
+            formulaire.submit(); // Soumettre le formulaire manuellement
+        }
     });
 });
 
-
-// On définit quelques variables
-let nativePicker = document.querySelector(".nativeTimePicker");
-let fallbackPicker = document.querySelector(".fallbackTimePicker");
-
-let hourSelect = document.querySelector("#hour");
-let minuteSelect = document.querySelector("#minute");
-
-// On cache le sélecteur alternatif
-fallbackPicker.style.display = "none";
-
-// On teste si un nouveau contrôle time
-// est transformé en text
-let test = document.createElement("input");
-
-try {
-    test.type = "time";
-} catch (e) {
-    console.log(e.description);
-}
-
-// Si c'est le cas…
-if (test.type === "text") {
-    // On masque le sélecteur natif et
-    // on affiche le sélecteur alternatif
-    nativePicker.style.display = "none";
-    fallbackPicker.style.display = "block";
-
-    // On génère les valeurs dynamiquement
-    // pour les heures et les minutes
-    populateHours();
-    populateMinutes();
-}
-
-function populateHours() {
-    // On ajoute les heures dans
-    // l'élément <select> avec les 6
-    // heures ouvertes
-    for (let i = 12; i <= 18; i++) {
-        let option = document.createElement("option");
-        option.textContent = i;
-        hourSelect.appendChild(option);
-    }
-}
-
-function populateMinutes() {
-    // On génère 60 options pour 60 minutes
-    for (let i = 0; i <= 59; i++) {
-        let option = document.createElement("option");
-        option.textContent = i < 10 ? "0" + i : i;
-        minuteSelect.appendChild(option);
-    }
-}
-
-// avec la fonction suivante, si l'heure vaut 18
-// on s'assure que les minutes vaillent 00
-// afin de ne pas pouvoir choisir d'heure passé 18:00
-function setMinutesToZero() {
-    if (hourSelect.value === "18") {
-        minuteSelect.value = "00";
-    }
-}
-function submitreservation() {
-    let name = document.getElementById("nom").value;
-    let guest = document.getElementById("guests").value;
-    let message = "Merci " + name + " de votre réservation pour " + guest;
-    alert(message);
-};
-
+// Fonction de validation des champs
 function validerChamp(regex, champ, messageErreur) {
-    if (!regex.test(champ.value)) {
+    const valeur = champ.value.trim();
+    if (!regex.test(valeur)) {
         alert(messageErreur);
         champ.focus();
         return false;
     }
     return true;
-}
+};

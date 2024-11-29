@@ -1,19 +1,30 @@
-<?php
-$title = "Plats";
-session_start();
-include 'header.php';
+<?php 
+require_once 'DAO.php';
+$id = ($_GET['id']) ? $_GET['id'] : null;
+if ($id) {
+    //var_dump(getPlatsbyCategorie($id, $db)); //Debug de $id
+    $plats = getPlatsbyCategorie($id, $db);
+} else {
+    echo "No disc_id provided in URL.";
+}
+
+
+
+
+
+$title = $id;
+require_once 'header.php' ;
+
+
 ?>
 
-<head>
-    <link rel="stylesheet" href="../CSS/plats.css">
-</head>
+<link rel="stylesheet" href="../CSS/plats.css">
 
 <div class="corps">
     <div class="name">
-        <h1 class="title">Tous les plats</h1>
+        <h1 class="title"><?= htmlspecialchars($_SESSION["PlatsbyCat"]['libelle']) ?></h1>
     </div>
     <div class="row">
-        <!--placer la balise hyperlien pour chaque conteneur  quand la page commande sera faite-->
         <?php foreach ($_SESSION["plats"] as $plats) : ?>
 
             <div class="col-md-2 mb-3">
@@ -32,7 +43,4 @@ include 'header.php';
     </div>
 </div>
 
-
-<?php
-include 'footer.php';
-?>
+<?php require_once 'footer.php';

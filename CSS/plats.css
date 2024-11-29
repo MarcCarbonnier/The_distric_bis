@@ -1,9 +1,8 @@
-body{
-    background-color: black;
-    height: 100%;
-}
 .corps{
-    height: 100vh;
+    background-color: black;
+    width: 100%;
+    padding-top: 20px;
+    padding-left: 20px;
 }
 
 .name {
@@ -17,169 +16,20 @@ body{
 .title{
     text-align: center;
 }
-.list {
-    padding-left: 5vh;
-    height: 35vh;
-}
-.list2{
-    padding-top: 15vh;
-    padding-left: 5vh;
-    height: 15vh;
-}
-
-.container,
-.container2,
-.container3,
-.container4,
-.container5,
-.container6,
-.container7,
-.container8 {
-    backdrop-filter: blur(16px) saturate(180%);
-    background-color: rgba(17, 25, 40, 0.25);
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.125);
-    padding: 38px;
-    filter: drop-shadow(0 30px 10px rgba(0, 0, 0, 0.125));
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background-color: black;
-    width: 50vh;
-    position: absolute;
-    height: 45vh;
-    width: 40vh;
-}
-
-
-.container2 {
-    left: 50vh;
-}
-
-.container3 {
-    left: 95vh;
-}
-
-.container4 {
-    left: 140vh;
-}
-
-.container6 {
-    left: 50vh;
-}
-
-.container7 {
-    left: 95vh
-}
-
-.container8 {
-    left: 140vh;
-}
-
-
-.wrapper {
+img{
     width: 100%;
-    height: 100%;
-
+    height: 300px;
+    object-fit: cover;
 }
-
-.banner-image {
-    background-image: url(/images_the_district/food/buffalo-chicken.webp);
-    background-position: center;
-    background-size: cover;
-    height: 220px;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.255);
+.row{
+    width: 190vh;
 }
-
-.banner-image2 {
-    background-image: url(/images_the_district/food/Food-Name-3461.jpg);
-    background-position: center;
-    background-size: cover;
-    height: 220px;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.255);
-    position: relative;
-    top: -2vh;
+.card-title{
+    color: aqua;
 }
-
-.banner-image3 {
-    background-image: url(/images_the_district/food/courgettes_farcies.jpg);
-    background-position: center;
-    background-size: cover;
-    height: 220px;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.255);
+.card-text{
+    color: white;
 }
-
-.banner-image4 {
-    background-image: url(/images_the_district/food/cesar_salad.jpg);
-    background-position: center;
-    background-size: cover;
-    height: 220px;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.255);
-}
-
-.banner-image5 {
-    background-image: url(/images_the_district/food/salad1.png);
-    background-position: center;
-    background-size: cover;
-    height: 220px;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.255);
-}
-
-.banner-image6 {
-    background-image: url(/images_the_district/food/Food-Name-3631.jpg);
-    background-position: center;
-    background-size: cover;
-    height: 220px;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.255);
-}
-
-.banner-image7 {
-    background-image: url(/images_the_district/food/hamburger.jpg);
-    background-position: center;
-    background-size: cover;
-    height: 220px;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.255);
-}
-
-.banner-image8 {
-    background-image: url(/images_the_district/food/cheesburger.jpg);
-    background-position: center;
-    background-size: cover;
-    height: 220px;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.255);
-    position: relative;
-    top: 1vh;
-}
-
-h1 {
-    font-family: 'Righteous', sans-serif;
-    color: rgba(255, 255, 255, 0.98);
-    text-transform: uppercase;
-    font-size: 2.4rem;
-}
-
-p {
-    color: #fff;
-    font-family: 'Lato', sans-serif;
-    text-align: center;
-    font-size: 0.8rem;
-    line-height: 150%;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-
-
 .btn {
     border: none;
     padding: 12px 24px;
@@ -190,47 +40,9 @@ p {
     cursor: pointer;
 }
 
-.btn+.btn {
-    margin-left: 10px;
-}
-
-.outline {
-    background: transparent;
-    color: rgba(0, 212, 255, 0.9);
-    border: 1px solid rgba(0, 212, 255, 0.6);
-    transition: all .3s ease;
-
-}
-
-.outline:hover {
-    transform: scale(1.125);
-    color: rgba(255, 255, 255, 0.9);
-    border-color: rgba(255, 255, 255, 0.9);
-    transition: all .3s ease;
-}
-
-.fill {
-    background: rgba(0, 212, 255, 0.9);
-    color: rgba(255, 255, 255, 0.95);
-    filter: drop-shadow(0);
-    font-weight: bold;
-    transition: all .3s ease;
-}
-
-.fill:hover {
-    transform: scale(1.125);
-    border-color: rgba(255, 255, 255, 0.9);
-    filter: drop-shadow(0 10px 5px rgba(0, 0, 0, 0.125));
-    transition: all .3s ease;
-}
-
-.bouton {
-    background-color: grey;
-}
-
 .next {
     position: relative;
-    top: 47vh;
+    padding-bottom: 10px;
     padding-left: 150vh;
     width: 20vh;
 }
@@ -252,7 +64,5 @@ p {
     display: none;
 }
 footer{
-    position: absolute;
-    top: 130vh;
-    width: 100%;
+    position: relative;
 }

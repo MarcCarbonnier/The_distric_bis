@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="/CSS/contact.css">
 <?php
+$title = "Contact";
 include 'header.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {

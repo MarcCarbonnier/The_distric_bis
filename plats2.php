@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 $title = "Plats";
 include 'header.php';
 ?>
@@ -101,4 +101,4 @@ include 'footer.php';
     crossorigin="anonymous"></script>
 </body>
 
-</html>
+</html> -->
