@@ -1,6 +1,7 @@
 <?php
 $title= "Reservation";
-include 'header.php';?>
+include 'header.php';
+$currentdate = date('Y-m-d'); ?>
 <link rel="stylesheet" href="../CSS/reserver.css">
 <?php
 
@@ -17,7 +18,7 @@ include 'header.php';?>
         <input type="number" id="guests" name="guests" class="menu" min="1" max="20" required>
     </div>
     <div class="date pad">
-        <input type="date" id="date" name="date" required />
+        <input type="date" id="date" name="date" min="<?php echo $currentdate?>" required />
     </div>
     <div class="horaire pad">
         <div class="nativeTimePicker" id="time">
@@ -33,7 +34,6 @@ include 'header.php';?>
 </form>
 
     </div>
-
 
 
     <?php 

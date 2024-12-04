@@ -1,20 +1,20 @@
-<?php 
+<?php
 require_once 'DAO.php';
-$id = ($_GET['id']) ? $_GET['id'] : null;
+$id = isset($_GET['id']) ? $_GET['id'] : null;
+$_SESSION['name'] = NameTitle($id, $db);
+
 if ($id) {
-    //var_dump(getPlatsbyCategorie($id, $db)); //Debug de $id
-    $plats = getPlatsbyCategorie($id, $db);
+    //print_r($_SESSION['name'][1]->libelles);
 } else {
-    echo "No disc_id provided in URL.";
+    echo "Aucun plats trouvés dans cette catégorie";
 }
 
 
 
 
 
-$title = $id;
-require_once 'header.php' ;
-
+$title = $_SESSION['name'][0]->libelles;
+require_once 'header.php';
 
 ?>
 
@@ -22,22 +22,19 @@ require_once 'header.php' ;
 
 <div class="corps">
     <div class="name">
-        <h1 class="title"><?= htmlspecialchars($_SESSION["PlatsbyCat"]['libelle']) ?></h1>
+        <h1 class="title"><?= htmlspecialchars($_SESSION['name'][0]->libelles) ?></h1>
     </div>
     <div class="row">
-        <?php foreach ($_SESSION["plats"] as $plats) : ?>
-
-            <div class="col-md-2 mb-3">
-                <div class="body-card">
-                    <div class="banner-image"><img src="./images_the_district/food/<?= htmlspecialchars($plats->image) ?>" alt="<?= $plats->libelle ?>"></div>
-                    <h3 class="card-title"><?= htmlspecialchars($plats->libelle) ?></h3>
-                    <p class="card-text"><?= htmlspecialchars($plats->description) ?></p>
+            <?php foreach ($_SESSION['name'] as $_SESSION['plats']) : ?>
+                <div class="col-md-2 mb-3">
+                    <div class="body-card">
+                        <div class="banner-image"><img src="./images_the_district/food/<?= htmlspecialchars($_SESSION['plats']->image) ?>" alt="<?= htmlspecialchars($_SESSION['plats']->libelle ?? 'IMAGE NOT FOUND') ?>"></div>
+                        <h3 class="card-title"><?= htmlspecialchars($_SESSION['plats']->libelle  ?? 'No title provided') ?></h3>
+                        <p class="card-text"><?= htmlspecialchars($_SESSION['plats']->description  ?? 'No description provided') ?></p>
+                    </div>
                 </div>
-            </div>
-        <?php endforeach ?>
+            <?php endforeach ?>
     </div>
-
-
     <div class="button-wrapper next">
         <a href="#" class="button">Ajouter</a>
     </div>

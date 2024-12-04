@@ -30,7 +30,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 (hours >= 11 && hours <= 13 && !(hours === 13 && minutes > 30)) || // Plage midi
                 (hours >= 18 && hours <= 21 && !(hours === 21 && minutes > 30))   // Plage dîner
             ) {} else {
-                e.preventDefault();
                 alert("Veuillez sélectionner un horaire valide (Midi : 11:00-13:30, Dîner : 18:00-21:30).");
                 verif=false;
             }
@@ -38,6 +37,12 @@ document.addEventListener("DOMContentLoaded", function () {
         // Validation réussie -> Soumettre le formulaire
         if (verif) {
             alert("Merci pour votre réservation  !");
+            const box = document.getElementById("box");
+            if (box) {
+                box.style.display = "none";
+            } else {
+                console.error("Cadre introuvable.");
+            }
             formulaire.submit(); // Soumettre le formulaire manuellement
         }
     });

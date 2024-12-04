@@ -1,32 +1,40 @@
 <?php
 session_start();
+require_once 'db_connect.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    $name = htmlspecialchars($_POST['nom']);
-    $couvert = (int)$_POST['guests'];
-    $date = htmlspecialchars($_POST['date']);
-    $time = htmlspecialchars($_POST['appt-time']);
+    $name = filter_input(INPUT_POST, 'nom');
+    $couvert = filter_input(INPUT_POST, 'guests');
+    $date = filter_input(INPUT_POST, 'date');
+    $time = filter_input(INPUT_POST, 'appt-time');
 
     //var_dump($name);
     //var_dump($couvert);
     //var_dump($date);
     //var_dump($time);
 
-    $_SESSION["name"]=$name;
-    $_SESSION["couvert"]=$couvert;
-    $_SESSION["date"]=$date;
-    $_SESSION["time"]=$name;
+    $formattedTime = date('H:i:s', strtotime($time));
+    if(!$name || !$couvert || !$date ||!$time){
+        echo "Données incomplètes";
+    }
 
+    try{
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $query = $db->prepare("INSERT INTO  reservation (nom , Couvert , date_ , Heure)
+        VALUES (:nom , :couvert , :date_, :heure)");
+        $query->execute([
+            ":nom"=>$name,
+            ":couvert"=>$couvert,
+            ":date_"=>$date,
+            ":heure"=>$formattedTime
+        ]);
 
-        echo "<div class= boite>";
-        echo "<h2 class='nom'>Merci de votre réservation, $name ! </h2>";
-        echo "<p>Détails de votre réservation :</p>";
-        echo "<ul>";
-        echo "<li>Nom : $name</li>";
-        echo "<li>Date : $date</li>";
-        echo "<li>Heure : $time</li>";
-        echo "<li>Nombre de personnes : $couvert</li>";
-        echo "</ul>";
-        echo "</div>";
+    header("Location: reserver.php");
+
+    }catch(PDOException $e){
+        echo " Erreur lors de l'insertion des données " . $e->getMessage();
+    }
+    
+
 }

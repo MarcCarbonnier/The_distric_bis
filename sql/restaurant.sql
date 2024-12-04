@@ -10,3 +10,11 @@ CREATE TABLE client(
     prenom VARCHAR(50),
     email VARCHAR(100)
 );
+
+CREATE TABLE reservation(
+    id_client int PRIMARY KEY NOT NULL AUTO_INCREMENT, 
+    nom VARCHAR(50) , 
+    Couvert INT, 
+    date_ VARCHAR(50),
+    Heure TIME
+);

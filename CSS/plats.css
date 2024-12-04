@@ -1,5 +1,6 @@
 .corps{
     background-color: black;
+    height: 120vh;
     width: 100%;
     padding-top: 20px;
     padding-left: 20px;
@@ -21,6 +22,24 @@ img{
     height: 300px;
     object-fit: cover;
 }
+
+
+
+#commander{
+    display: none;
+    color: white;
+}
+.banner-image:hover #commander{
+    display: block;
+}
+.banner-image:hover img{
+    scale: 0.87;
+    filter:grayscale(50%);
+}
+
+
+
+ 
 .row{
     width: 190vh;
 }
@@ -30,19 +49,10 @@ img{
 .card-text{
     color: white;
 }
-.btn {
-    border: none;
-    padding: 12px 24px;
-    border-radius: 24px;
-    font-size: 12px;
-    font-size: 0.8rem;
-    letter-spacing: 2px;
-    cursor: pointer;
-}
 
 .next {
-    position: relative;
-    padding-bottom: 10px;
+    position: absolute;
+    bottom: -33%;
     padding-left: 150vh;
     width: 20vh;
 }

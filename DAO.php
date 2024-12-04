@@ -2,11 +2,33 @@
 session_start();
 require_once 'db_connect.php';
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['search'])) {
+    $searchTerm = trim($_POST['search']);
+
+    // Si un terme de recherche est fourni
+    if ($searchTerm != '') {
+        $query = $db->prepare("SELECT * FROM plat WHERE libelle LIKE :query OR description LIKE :query");
+        $query->execute([':query' => '%' . $searchTerm . '%']);
+    }
+
+    // Récupérer les résultats
+    $tableaux = $query->fetchAll(PDO::FETCH_OBJ);
+
+    // Retourner les résultats sous forme de JSON
+    echo json_encode($tableaux);
+    exit;
+}
+
+
+
 function NameTitle($id,$db){
     $query = $db->prepare("SELECT * FROM categorie c LEFT JOIN plat p ON c.id = p.id_categorie WHERE c.id = :id");
     $query->bindParam(':id', $id, PDO::PARAM_INT);
     $query->execute();
     $title = $query->fetchALL(PDO::FETCH_OBJ);
+    if(!$title){
+        echo "Y'a rin lo :". $title ." !";
+    }
     return $title;
 }
 

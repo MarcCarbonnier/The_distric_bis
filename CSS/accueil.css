@@ -11,12 +11,34 @@
     background-position-y: -40px;
     width: 100%;
 }
-
+a{
+    text-decoration: none;
+}
+#results {
+    overflow-x: scroll;
+    height: 40vh;
+}
+.title{
+    font-size: xx-large;
+    color: aqua;
+}
+p{
+    color: white;
+}
+#search{
+    height: 60px;
+}
+img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
 .form-control {
     background: none;
     display: flex;
     justify-content: center;
     border: none;
+    height: 150px;
 }
 
 .d-flex {
