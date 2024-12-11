@@ -18,22 +18,25 @@ require_once 'header.php';
 
 ?>
 
-<link rel="stylesheet" href="../CSS/plats.css">
+<link rel="stylesheet" href="../CSS/page.css">
 
-<div class="corps">
+<div class="body">
     <div class="name">
-        <h1 class="title"><?= htmlspecialchars($_SESSION['name'][0]->libelles) ?></h1>
+        <h1 class="name-cat"><?= htmlspecialchars($_SESSION['name'][0]->libelles) ?></h1>
     </div>
     <div class="row">
-            <?php foreach ($_SESSION['name'] as $_SESSION['plats']) : ?>
-                <div class="col-md-2 mb-3">
-                    <div class="body-card">
-                        <div class="banner-image"><img src="./images_the_district/food/<?= htmlspecialchars($_SESSION['plats']->image) ?>" alt="<?= htmlspecialchars($_SESSION['plats']->libelle ?? 'IMAGE NOT FOUND') ?>"></div>
-                        <h3 class="card-title"><?= htmlspecialchars($_SESSION['plats']->libelle  ?? 'No title provided') ?></h3>
-                        <p class="card-text"><?= htmlspecialchars($_SESSION['plats']->description  ?? 'No description provided') ?></p>
+        <?php foreach ($_SESSION['name'] as $_SESSION['plats']) : ?>
+            <div class="col-md-2 mb-3">
+                <div class="body-card">
+                    <div class="banner-image">
+                        <img class="img-plat" src="./images_the_district/food/<?= htmlspecialchars($_SESSION['plats']->image) ?>" alt="<?= htmlspecialchars($_SESSION['plats']->libelle ?? 'IMAGE NOT FOUND') ?>">
+                        <button type="submit" class="commander">Commander</button>
                     </div>
+                    <h3 class="card-title"><?= htmlspecialchars($_SESSION['plats']->libelle  ?? 'No title provided') ?></h3>
+                    <p class="card-text"><?= htmlspecialchars($_SESSION['plats']->description  ?? 'No description provided') ?></p>
                 </div>
-            <?php endforeach ?>
+            </div>
+        <?php endforeach ?>
     </div>
     <div class="button-wrapper next">
         <a href="#" class="button">Ajouter</a>

@@ -11,10 +11,12 @@ body{
     left: 75vh;
     top: 5vh;
 }
+
 h1{
     text-align: center;
     color: white;
 }
+
 .couverts{
     width: 30vh;
     text-align: center;

@@ -25,21 +25,34 @@ img{
 
 
 
-#commander{
+.commander{
     display: none;
+    position: relative;
+    top: -300px;
     color: white;
+    background-color: rgba(128, 128, 128, 0.658);
+    border: none;
 }
-.banner-image:hover #commander{
+
+
+.banner-image:hover{
+    position: relative;
+    height: 300px;
+}
+.banner-image:hover .commander{
     display: block;
+    width: 100%;
+    position: relative;
+    scale: 0.9;
+    font-size: 50px;
+    height: 300px;
 }
 .banner-image:hover img{
-    scale: 0.87;
+    scale: 0.9;
     filter:grayscale(50%);
 }
 
 
-
- 
 .row{
     width: 190vh;
 }

@@ -5,7 +5,7 @@
     require_once 'DAO.php';
 
     ?>
-    <link rel="stylesheet" href="../CSS/accueil.css">
+    <link rel="stylesheet" href="../CSS/page.css">
 </head>
 <div class="bg">
     <div id="form" class="form-control">
@@ -22,7 +22,7 @@
     </canvas>
     <h2>Welcome</h2>
 </div>
-<script src="/JS/accueil.js"></script>
 <?php
 include 'footer.php';
 ?>
+<script src="/JS/accueil.js"></script>

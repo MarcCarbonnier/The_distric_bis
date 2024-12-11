@@ -45,7 +45,7 @@ function performSearch(query) {
                     const platDiv = document.createElement('div');
                     platDiv.classList.add('plat');
                     platDiv.innerHTML = `
-                        <img src='./images_the_district/food/${plat.image}' alt='${plat.image}'>
+                        <img class='img-plat' src='./images_the_district/food/${plat.image}' alt='${plat.image}'>
                         <p class='title'>${plat.libelle}</p>
                         <p>${plat.description}</p>
                         <p>Prix : ${plat.prix} €</p>

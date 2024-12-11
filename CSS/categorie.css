@@ -4,6 +4,9 @@
     width: 194vh;
     padding-top: 50px;
     padding-left: 50px;
+    position:relative;
+    top: 130px;
+    margin-bottom: 50px;
 }
 .card{
     background-color: black;

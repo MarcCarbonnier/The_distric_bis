@@ -16,7 +16,6 @@ $id = isset($_GET['id']) ? $_GET['id'] : null;
 </head>
 
 <body>
-    <section class="para">
         <header>
             <nav class="nav navbar navbar-expand-lg">
                 <div class="first">
@@ -97,4 +96,3 @@ $id = isset($_GET['id']) ? $_GET['id'] : null;
                 </div>
             </nav>
         </header>
-    </section>
